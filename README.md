@@ -65,6 +65,23 @@ In the above example we are using the default breakpoints. We have three possibi
 
 3.  screen width is **from‍ `large` to `∞`** which in this situation `font-size` is `20px`. 
 
+The code above is the same as below in pure CSS:
+```css
+/* ↓↓↓↓↓↓↓↓↓ */
+
+div {
+  @media (max-width: 768px) { /* to medium == less than medium  */
+    font-size: 10px;
+  }
+
+  font-size: 15px;
+
+  @media (min-width: 1170px) { /* from large == bigger than large  */
+    font-size: 10px;
+  }
+}
+```
+
 
 ## Use with custom breakpoints:
 Our breakpoints may not fit your app, so we export another function called `generateMedia` to generate a `media` object with your custom breakpoints:
