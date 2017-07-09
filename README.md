@@ -97,9 +97,10 @@ import { defaultBreakpoints } from 'styled-media-query';
 I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome. 
 
 ## 🍿 TODO
-- Add `between.[breakpoint].and.[breakpoint]` method
-- Add convertors for `em` and `rem` to `px` and vice-versa.
-- ... *You say?*
+- [ ] Write tests with Jest
+- [ ] Add `between.[breakpoint].and.[breakpoint]` method
+- [ ] Add convertors for `em` and `rem` to `px` and vice-versa.
+- [ ] ... *You say?*
 
 
 # License
