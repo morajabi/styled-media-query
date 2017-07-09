@@ -55,7 +55,7 @@ const Box = styled.div`
 `;
 ```
 In the above example we are using the default breakpoints. We have three possibilities here:
-1. screen width is **between `medium` to `large`** which in this situation `font-size` is `10px`.
+1. screen width is **between `0` to `medium`** which in this situation `font-size` is `10px`.
 
 2.  screen width is **0 to `medium`** which in this situation `font-size` is `15px`. 
 
