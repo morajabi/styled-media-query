@@ -1,7 +1,9 @@
 # 💅💍 styled-media-query
 Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
 
-**🎊 We are working so hard to add more features/customizations to `styled-media-query`!**
+
+**Don't forget to STAR 🎊 We are working so hard to add more features/customizations to `styled-media-query`!**
+
 
 Features:
 - Custom breakpoints
