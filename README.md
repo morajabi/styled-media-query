@@ -1,5 +1,5 @@
 # 💅💍 styled-media-query
-[![npm](https://img.shields.io/npm/v/npm.svg)]()
+[![npm](https://img.shields.io/npm/v/npm.svg)]()  [![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)]()  [![npm](https://img.shields.io/npm/l/express.svg)]()  [![David](https://img.shields.io/david/expressjs/express.svg)]()  
 
 Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
 
