@@ -1,0 +1,18 @@
+{
+  "name": "styled-media",
+  "version": "1.0.0",
+  "description": "Beautiful media queries for styled-component",
+  "main": "src/index.js",
+  "repository": "git@github.com:morajabi/styled-media.git",
+  "keywords": [
+    "styled-components",
+    "media-query",
+    "media",
+    "breakpoint"
+  ],
+  "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "styled-components": "2.x.x"
+  }
+}
