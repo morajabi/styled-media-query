@@ -1,5 +1,5 @@
 {
-  "name": "styled-media",
+  "name": "styled-media-query",
   "version": "1.0.0",
   "description": "Beautiful media queries for styled-component",
   "main": "src/index.js",
