@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Beautiful media queries for styled-component",
   "main": "src/index.js",
-  "repository": "git@github.com:morajabi/styled-media.git",
+  "repository": "git@github.com:morajabi/styled-media-query.git",
   "keywords": [
     "styled-components",
     "media-query",
