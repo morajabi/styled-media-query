@@ -2,7 +2,7 @@
   "name": "styled-media-query",
   "version": "1.0.1",
   "description": "Beautiful media queries for styled-component",
-  "main": "src/index.js",
+  "main": "dist/bundle.js",
   "repository": "git@github.com:morajabi/styled-media.git",
   "keywords": [
     "styled-components",
@@ -10,9 +10,13 @@
     "media",
     "breakpoint"
   ],
+  "scripts": {
+    "build": "rollup src/index.js --format cjs --output dist/bundle.js"    
+  },
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "rollup": "^0.45.1",
     "styled-components": "2.x.x"
   }
 }
