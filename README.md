@@ -11,11 +11,14 @@ Features:
 - Custom breakpoints
 - Custom size units (px, em, rem)
 - Awesome syntax for min-width and max-width for each breakpoint
-- Familiar syntax as it uses Tagged Template Literals just like styled-components does
+- Familiar syntax as it uses Tagged Template Literals just like styled-components
+- Ability to convert `px` to `rem` or `em`
 
 # Start
 - [Installation](#installation)
 - [Usage](#usage)
+- [Concepts](#concepts)
+- [API](#api)
 - [Tagged Template Literals explained](https://www.styled-components.com/docs/advanced#tagged-template-literals)
 
 # 🌱 Installation
@@ -115,6 +118,80 @@ In the case you needed the default breakpoints object, you can import it as foll
 ```javascript
 import { defaultBreakpoints } from 'styled-media-query';
 ```
+
+## 🐽 Concepts
+There's a little to learn before reading the API section.
+
+### Breakpoints Object
+It's an object containing each break point name as keys and the screen width as values. `styled-media-query` exports the *`defaultBreakpoints`* object.
+
+### Media Generator Object
+A **`media generator object`** is what is returned from `generateMedia` function or the default object exported from `styled-media-query`. Read API section for each method.
+
+## 🌼 API
+We have a very minimal API, probably you are familiar with 90% of it so far.
+
+### Default [`media generator object`](#media-generator-object) with default [`breakpoints object`](#breakpoints-object):
+Example:
+```javascript
+import media from 'styled-media-query';
+```
+
+### `generateMedia` 
+Generates custom [`media generator object`](#media-generator-object) with custom breakpoints:
+```
+generateMedia([breakpoints]);
+```
+
+*parameters:*
+- breakpoints: **type(`Object`) default(`defaultBreakpoints`)** - a [`breakpoints object`](#breakpoints-object)
+
+Example:
+```javascript
+import { generateMedia } from 'styled-media-query';
+
+const media = generateMedia({ 
+  xs: '250px',
+  sm: '450px',
+  md: '768px',
+  lg: '1200px',
+});
+```
+
+### `pxToRem`
+Converts [`breakpoints object`](#breakpoints-object)'s units from `px` to `rem` based on the `ratio` of `px` to `1rem`.
+
+*parameters:*
+- breakpoints: **type(`Object`)** - a [`breakpoints object`](#breakpoints-object)
+- ratio: **type(`number`) default(`16`)** - how many `px` is equal to `1rem`? (It's your root `font-size`)
+
+```javascript
+import { pxToRem } from 'styled-media-query';
+
+const breakpointsInRem = pxToRem({ 
+  small: '250px',
+  medium: '768px',
+  large: '1200px',
+}, 10);
+
+/* ↓↓ returns ↓↓
+{ 
+  small: '25rem',
+  medium: '76.8rem',
+  large: '120rem',
+}
+*/
+```
+
+### `pxToEm`
+similar to [`pxToRem`](#pxToRem). Converts [`breakpoints object`](#breakpoints-object)'s units from `px` to `em` based on the `ratio` of `px` to `1em`.
+
+*parameters:*
+- breakpoints: **type(`Object`)** - a **`breakpoints object`**
+- ratio: **type(`number`) default(`16`)** - how many `px` is equal to `1em`? (Probably it's your root `font-size`)
+
+Example: 
+Similar to [`pxToRem`](#pxToRem).
 
 ## 🐿 Contributions
 I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome. 
