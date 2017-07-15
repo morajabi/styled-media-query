@@ -29,3 +29,12 @@ function pxToEmOrRem(breakpoints, ratio = 16, unit) {
 export function pxToEm(breakpoints, ratio = 16) {
   return pxToEmOrRem(breakpoints, ratio, 'em');
 }
+
+/**
+ * Converts breakpoint units in px to rem 
+ * @param {Object} breakpoints - an object containing breakpoint names as keys and the width as value
+ * @param {number} [16] ratio - size of 1rem in px. What is your main font-size in px? 
+ */
+export function pxToRem(breakpoints, ratio = 16) {
+  return pxToEmOrRem(breakpoints, ratio, 'rem');
+}
