@@ -1,4 +1,10 @@
 import { css } from 'styled-components';
+import { pxToEm, pxToRem } from './convertors';
+
+export {
+  pxToEm,
+  pxToRem
+};
 
 /**
  * Default media breakpoints
