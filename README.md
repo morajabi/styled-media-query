@@ -15,10 +15,10 @@ Features:
 - Ability to convert `px` to `rem` or `em`
 
 # Start
-- [Installation](#installation)
-- [Usage](#usage)
-- [Concepts](#concepts)
-- [API](#api)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Concepts](#-concepts)
+- [API](#-api)
 - [Tagged Template Literals explained](https://www.styled-components.com/docs/advanced#tagged-template-literals)
 
 # 🌱 Installation
