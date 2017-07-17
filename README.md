@@ -207,6 +207,7 @@ I'd love to contribute in open source projects, and love to see people contribut
 - [ ] Add `between.[breakpoint].and.[breakpoint]` method
 - [x] Add convertors for `em` and `rem` to `px` and vice-versa.
 - [ ] Ability to specify custom media attributes
+- [ ] Add support for [glamorous](https://github.com/paypal/glamorous)
 - [ ] ... *You say?*
 
 
