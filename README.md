@@ -210,7 +210,6 @@ I'd love to contribute in open source projects, and love to see people contribut
 - [ ] Add support for [glamorous](https://github.com/paypal/glamorous)
 - [ ] ... *You say?*
 
-
 # License
 Licensed under the MIT License, Copyright © 2017 [Mohammad Rajabifard](https://github.com/morajabi).
 
