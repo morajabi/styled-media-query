@@ -11,12 +11,16 @@
     "breakpoint"
   ],
   "scripts": {
-    "build": "rollup src/index.js --format cjs --output dist/bundle.js"    
+    "build": "rollup -c"
   },
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "rollup": "^0.45.1",
+    "rollup": "^0.45.2",
     "styled-components": "2.x.x"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "rollup-plugin-babel": "^2.7.1"
   }
 }
