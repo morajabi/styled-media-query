@@ -19,12 +19,12 @@
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "rollup": "^0.45.2",
     "styled-components": "2.x.x"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "rimraf": "^2.6.1",
+    "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-node-resolve": "^3.0.0"
   }
