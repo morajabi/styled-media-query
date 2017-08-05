@@ -4,8 +4,9 @@ import babel from 'rollup-plugin-babel';
 
 export default {
   entry: 'src/index.js',
+  dest: 'dist/styled-media-query.umd.js',
   format: 'umd',
-  moduleName: 'StyledMediaQuery',
+  moduleName: 'styled-media-query',
   sourceMap: true,
   exports: 'named',
   plugins: [
@@ -17,5 +18,4 @@ export default {
     babel()
   ],
   external: ['react', 'styled-components'],
-  dest: 'dist/bundle.js'
 };
