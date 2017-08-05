@@ -50,6 +50,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
  * Media object with default breakpoints
  * @return {object} - Media generators for each size
  */
+
 export const media = generateMedia();
 
 /**
