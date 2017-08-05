@@ -2,8 +2,8 @@
   "name": "styled-media-query",
   "version": "1.0.1",
   "description": "Beautiful media queries for styled-component",
-  "main": "dist/bundle.js",
-  "repository": "git@github.com:morajabi/styled-media.git",
+  "main": "src/index.js",
+  "repository": "git@github.com:morajabi/styled-media-query.git",
   "keywords": [
     "styled-components",
     "media-query",

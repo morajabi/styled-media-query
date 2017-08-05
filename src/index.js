@@ -1,4 +1,10 @@
 import { css } from 'styled-components';
+import { pxToEm, pxToRem } from './convertors';
+
+export {
+  pxToEm,
+  pxToRem
+};
 
 /**
  * Default media breakpoints
@@ -13,7 +19,7 @@ export const defaultBreakpoints = {
 
 /**
  * Media query generator 
- * @param {Object} - Map labels to breakpoint sizes
+ * @param {Object} [defaultBreakpoints] breakpoints - Map labels to breakpoint sizes
  * @return {Object} - Media generators for each breakpoint
  */
 export function generateMedia(breakpoints = defaultBreakpoints) {
