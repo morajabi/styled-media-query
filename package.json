@@ -1,6 +1,6 @@
 {
   "name": "styled-media-query",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Beautiful media queries for styled-component",
   "main": "dist/styled-media-query.umd.js",
   "module": "src/index.js",
