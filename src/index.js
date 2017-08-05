@@ -50,7 +50,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
  * Media object with default breakpoints
  * @return {object} - Media generators for each size
  */
-export default generateMedia();
+export const media = generateMedia();
 
 /**
  * Usage: styled.div` ${media.from.medium`background: #000;`} `;
