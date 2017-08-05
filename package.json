@@ -2,7 +2,7 @@
   "name": "styled-media-query",
   "version": "1.0.1",
   "description": "Beautiful media queries for styled-component",
-  "main": "dist/bundle.umd.js",
+  "main": "dist/styled-media-query.umd.js",
   "module": "src/index.js",
   "jsnext:main": "./src/index.js",
   "repository": "git@github.com:morajabi/styled-media-query.git",
