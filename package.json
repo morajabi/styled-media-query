@@ -2,7 +2,9 @@
   "name": "styled-media-query",
   "version": "1.0.1",
   "description": "Beautiful media queries for styled-component",
-  "main": "src/index.js",
+  "main": "dist/styled-media-query.umd.js",
+  "module": "src/index.js",
+  "jsnext:main": "./src/index.js",
   "repository": "git@github.com:morajabi/styled-media-query.git",
   "keywords": [
     "styled-components",
@@ -10,9 +12,20 @@
     "media",
     "breakpoint"
   ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "rollup -c"
+  },
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "rollup": "^0.45.2",
     "styled-components": "2.x.x"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "rimraf": "^2.6.1",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0"
   }
 }
