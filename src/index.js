@@ -15,6 +15,16 @@ export const defaultBreakpoints = {
   large: '1170px',
   medium: '768px',
   small: '450px',
+};
+
+function getSizeFromBreakpoint(breakpointValue: number | string, breakpoints = {}) {
+  if (breakpoints[breakpointValue]) {
+    return breakpoints[breakpointValue];
+  } else if (parseInt(breakpointValue)) {
+    return breakpointValue;
+  } else {
+    console.error('styled-media-query: No valid breakpoint or size specified for media.');
+  }
 }
 
 /**
@@ -24,13 +34,20 @@ export const defaultBreakpoints = {
  */
 export function generateMedia(breakpoints = defaultBreakpoints) {
   const lessThan = (breakpoint) => (...args) => css`
-    @media (max-width: ${breakpoints[breakpoint]}) {
+    @media (max-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
       ${css(...args)}
     }
   `;
 
   const greaterThan = (breakpoint) => (...args) => css`
-    @media (min-width: ${breakpoints[breakpoint]}) {
+    @media (min-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
+      ${css(...args)}
+    }
+  `;
+
+  const between = (firstBreakpoint, secondBreakpoint) => (...args) => css`
+    @media (min-width: ${getSizeFromBreakpoint(firstBreakpoint, breakpoints)}) and 
+      (max-width: ${getSizeFromBreakpoint(secondBreakpoint, breakpoints)}) {
       ${css(...args)}
     }
   `;
@@ -61,6 +78,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
     {
       lessThan,
       greaterThan,
+      between,
     },
     oldStyle,
   );
