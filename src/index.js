@@ -17,7 +17,7 @@ export const defaultBreakpoints = {
   small: '450px',
 };
 
-function getSizeFromBreakpoint(breakpointValue: number | string, breakpoints = {}) {
+function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
   if (breakpoints[breakpointValue]) {
     return breakpoints[breakpointValue];
   } else if (parseInt(breakpointValue)) {
