@@ -24,6 +24,7 @@ function getSizeFromBreakpoint(breakpointValue: number | string, breakpoints = {
     return breakpointValue;
   } else {
     console.error('styled-media-query: No valid breakpoint or size specified for media.');
+    return '0';
   }
 }
 
