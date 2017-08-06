@@ -59,7 +59,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
       const size = breakpoints[label];
       
       acc.to[label] = (...args) => {
-        console.warn(`styled-media-query: Use media.lessThan('${label}') instead of old media.${label} (Probably we'll deprecate it)`);
+        console.warn(`styled-media-query: Use media.lessThan('${label}') instead of old media.to.${label} (Probably we'll deprecate it)`);
         return css`
           @media (max-width: ${size}) {
             ${css(...args)}
@@ -68,7 +68,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
       };
 
       acc.from[label] = (...args) => {
-        console.warn(`styled-media-query: Use media.lessThan('${label}') instead of old media.${label} (Probably we'll deprecate it)`);
+        console.warn(`styled-media-query: Use media.greaterThan('${label}') instead of old media.from.${label} (Probably we'll deprecate it)`);
         return css`
           @media (min-width: ${size}) {
             ${css(...args)}
