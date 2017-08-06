@@ -23,7 +23,19 @@ export const defaultBreakpoints = {
  * @return {Object} - Media generators for each breakpoint
  */
 export function generateMedia(breakpoints = defaultBreakpoints) {
-  return Object
+  const lessThan = (breakpoint) => (...args) => css`
+    @media (max-width: ${breakpoints[breakpoint]}) {
+      ${css(...args)}
+    }
+  `;
+
+  const greaterThan = (breakpoint) => (...args) => css`
+    @media (min-width: ${breakpoints[breakpoint]}) {
+      ${css(...args)}
+    }
+  `;
+
+  const oldStyle = Object
     .keys(breakpoints)
     .reduce((acc, label) => {
       const size = breakpoints[label];
@@ -44,13 +56,20 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
     }, 
     { to: {}, from: {} }
   );
+
+  return Object.assign(
+    {
+      lessThan,
+      greaterThan,
+    },
+    oldStyle,
+  );
 }
 
 /**
  * Media object with default breakpoints
  * @return {object} - Media generators for each size
  */
-
 export default generateMedia();
 
 /**
