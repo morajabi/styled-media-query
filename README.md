@@ -46,9 +46,9 @@ First let me mention how our default breakpoint look like:
 ```
 
 The `media` has 3 main methods to generate media queries:
-- `lessThan(breakpoint | size)`
-- `greaterThan(breakpoint | size)`
-- `between(firstBreakpoint | firstSize, lastBreakpoint | lastSize)`
+- [`lessThan(breakpoint | size)`](#lessthan)
+- [`greaterThan(breakpoint | size)`](#greaterthan)
+- [`between(firstBreakpoint | firstSize, lastBreakpoint | lastSize)`](#between)
 
 
 ## Basic Example
