@@ -1,5 +1,5 @@
 # 💅💍 styled-media-query
-[![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()  [![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()  [![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]()  
+[![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()  [![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()  [![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]()
 
 Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
 
@@ -24,14 +24,19 @@ Features:
 # 🌱 Installation
 You can install it like every other library with awesome **yarn**:
 ```
-yarn add styled-media-query 
+yarn add styled-media-query
 ```
-or with **npm** (as npm@5 you don't need `--save`):
+or with **npm**
 ```
-npm install --save styled-media-query 
+npm install styled-media-query
 ```
 
 *Note: If you didn't install `styled-components` yet, install it as well `yarn add styled-components`*
+
+**If you use UglifyJS and it fails or you need compiled module you can install version 2 beta right now to fix the issue:**
+```
+npm install styled-media-query@beta
+```
 
 # 🍃 Usage
 First let me mention how our default breakpoint look like:
@@ -66,9 +71,9 @@ const Box = styled.div`
 In the above example we are using the default breakpoints. We have three possibilities here:
 1. screen width is **`0` to `medium`** which in this situation `font-size` is `10px`.
 
-2.  screen width is **`medium` to `large`** which in this situation `font-size` is `15px`. 
+2.  screen width is **`medium` to `large`** which in this situation `font-size` is `15px`.
 
-3.  screen width is **from‍ `large` to `∞`** which in this situation `font-size` is `20px`. 
+3.  screen width is **from‍ `large` to `∞`** which in this situation `font-size` is `20px`.
 
 The code above is the same as below in pure CSS:
 ```css
@@ -140,7 +145,7 @@ import media from 'styled-media-query';
 ```
 
 
-### `generateMedia` 
+### `generateMedia`
 Generates custom [`media generator object`](#media-generator-object) with custom breakpoints:
 ```
 generateMedia([breakpoints]);
@@ -152,7 +157,7 @@ generateMedia([breakpoints]);
 ```javascript
 import { generateMedia } from 'styled-media-query';
 
-const media = generateMedia({ 
+const media = generateMedia({
   xs: '250px',
   sm: '450px',
   md: '768px',
@@ -172,14 +177,14 @@ Converts [`breakpoints object`](#breakpoints-object)'s units from `px` to `rem` 
 ```javascript
 import { pxToRem } from 'styled-media-query';
 
-const breakpointsInRem = pxToRem({ 
+const breakpointsInRem = pxToRem({
   small: '250px',
   medium: '768px',
   large: '1200px',
 }, 10);
 
 /* ↓↓ returns ↓↓
-{ 
+{
   small: '25rem',
   medium: '76.8rem',
   large: '120rem',
@@ -199,7 +204,7 @@ Similar to [`pxToRem`](#pxToRem). Converts [`breakpoints object`](#breakpoints-o
 Similar to [`pxToRem`](#pxToRem).
 
 ## 🐿 Contributions
-I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome. 
+I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome.
 
 ## 🍿 TODO
 - [x] Add LICENSE
