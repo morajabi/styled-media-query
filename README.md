@@ -203,6 +203,13 @@ Similar to [`pxToRem`](#pxToRem). Converts [`breakpoints object`](#breakpoints-o
 *Example:*
 Similar to [`pxToRem`](#pxToRem).
 
+
+## ⚙️ Troubleshoot
+If you use UglifyJS and it fails or you need compiled module you can install version 2 beta right now to fix the issue:
+```
+npm install styled-media-query@beta
+```
+
 ## 🐿 Contributions
 I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome.
 
