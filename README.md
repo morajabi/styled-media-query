@@ -44,52 +44,118 @@ First let me mention how our default breakpoint look like:
 }
 ```
 
-## Use with default breakpoints:
-The simplest way to use `styled-media-query` is as follow (We'll explain below):
-```javascript
+The `media` has 3 main methods to generate media queries:
+- `lessThan(breakpoint | size)`
+- `greaterThan(breakpoint | size)`
+- `between(firstBreakpoint | firstSize, lastBreakpoint | lastSize)`
+
+
+## Basic Example
+Probably this example will explain most of this library. You can use one of these methods to write different kinds of media queries like this:
+```js
 import styled from 'styled-components'; // You need this as well
 import media from 'styled-media-query';
 
-// for example call it `Box`
 const Box = styled.div`
-  ${media.to.medium`
-    font-size: 10px;
+  background: black;
+
+  ${media.lessThan('medium')`
+    /* screen width is less than 768px (medium) */
+    background: red;
   `}
 
-  font-size: 15px;
+  ${media.between('medium', 'large')`
+    /* screen width is between 768px (medium) and 1170px (large) */
+    background: green;
+  `}
 
-  ${media.from.large`
-    font-size: 20px;
+  ${media.greaterThan('large')`
+    /* screen width is greater than 1170px (large) */
+    background: blue;
   `}
 `;
 ```
-In the above example we are using the default breakpoints. We have three possibilities here:
-1. screen width is **`0` to `medium`** which in this situation `font-size` is `10px`.
-
-2.  screen width is **`medium` to `large`** which in this situation `font-size` is `15px`. 
-
-3.  screen width is **from‍ `large` to `∞`** which in this situation `font-size` is `20px`. 
 
 The code above is the same as below in pure CSS:
 ```css
 /* ↓↓↓↓↓↓↓↓↓ */
 
 div {
-  @media (max-width: 768px) { /* to medium == less than medium  */
-    font-size: 10px;
+  background: black;
+
+  @media (max-width: 768px) {
+    /* screen width is less than 768px (medium) */
+    background: red;
   }
 
-  font-size: 15px;
+  @media (min-width: 768px) and (max-width: 1170px) {
+    /* screen width is between 768px (medium) and 1170px (large) */
+    background: green;
+  }
 
-  @media (min-width: 1170px) { /* from large == bigger than large  */
-    font-size: 10px;
+  @media (min-width: 1170px) {
+    /* screen width is greater than 1170px (large) */
+    background: blue;
   }
 }
 ```
 
+*Note: You can use custom size instead of breakpoint names, too.*
+
+## `lessThan`
+You can use this type of media query to write style for screen sizes *less than* given breakpoint or size.
+
+Example with breakpoint:
+```
+media.lessThan('medium')`
+  /* styles ... */
+`
+```
+
+Example with custom size:
+```
+media.lessThan('768px')`
+  /* styles ... */
+`
+```
+*Note: You can use `rem` and `em` too. (Even you can convert breakpoints to use `em` or `rem` with [`pxToRem`](#pxToRem) and [`pxToEm`](#pxToEm) functions)*
+
+## `greaterThan`
+You can use it to write style for screen sizes *greater than* given breakpoint or size.
+
+Example with breakpoint:
+```
+media.greaterThan('small')`
+  /* styles ... */
+`
+```
+
+Example with custom size:
+```
+media.greaterThan('450px')`
+  /* styles ... */
+`
+```
+
+## `between`
+We use `between` to write style for screen sizes *between* the two given breakpoints or sizes.
+
+Example with breakpoints:
+```
+media.between('small', 'medium')`
+  /* styles ... */
+`
+```
+
+Example with custom sizes:
+```
+media.between('450px', '768px')`
+  /* styles ... */
+`
+```
 
 ## Use with custom breakpoints:
-Our breakpoints may not fit your app, so we export another function called `generateMedia` to generate a `media` object with your custom breakpoints:
+Our breakpoints may not fit your app, so we export another function called `generateMedia` to generate a `media` object with your own custom breakpoints:
 ```javascript
 import styled from 'styled-components'; // You need this as well
 import { generateMedia } from 'styled-media-query';
@@ -104,12 +170,9 @@ const customMedia = generateMedia({
 const Box = styled.div`
   font-size: 20px;
 
-  ${media.to.tablet`
+  ${media.lessThan('tablet')`
+    /* for screen sizes less than 60em */
     font-size: 15px;
-  `}
-
-  ${media.to.mobile`
-    font-size: 10px;
   `}
 `;
 ```
@@ -120,7 +183,7 @@ import { defaultBreakpoints } from 'styled-media-query';
 ```
 
 ## 🐽 Concepts
-There's a little to learn before reading the API section.
+There's a little to learn before you can read the API section.
 
 ### Breakpoints Object
 It's an object containing each break point name as keys and the screen width as values. `styled-media-query` exports the `defaultBreakpoints` object.
