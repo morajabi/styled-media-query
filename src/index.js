@@ -29,7 +29,7 @@ function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
 }
 
 /**
- * Media query generator 
+ * Media query generator
  * @param {Object} [defaultBreakpoints] breakpoints - Map labels to breakpoint sizes
  * @return {Object} - Media generators for each breakpoint
  */
@@ -47,7 +47,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
   `;
 
   const between = (firstBreakpoint, secondBreakpoint) => (...args) => css`
-    @media (min-width: ${getSizeFromBreakpoint(firstBreakpoint, breakpoints)}) and 
+    @media (min-width: ${getSizeFromBreakpoint(firstBreakpoint, breakpoints)}) and
       (max-width: ${getSizeFromBreakpoint(secondBreakpoint, breakpoints)}) {
       ${css(...args)}
     }
@@ -57,7 +57,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
     .keys(breakpoints)
     .reduce((acc, label) => {
       const size = breakpoints[label];
-      
+
       acc.to[label] = (...args) => {
         console.warn(`styled-media-query: Use media.lessThan('${label}') instead of old media.to.${label} (Probably we'll deprecate it)`);
         return css`
@@ -77,7 +77,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
       };
 
       return acc;
-    }, 
+    },
     { to: {}, from: {} }
   );
 

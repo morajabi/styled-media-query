@@ -12,7 +12,7 @@ let config = {
   exports: 'named',
   external: ['react', 'styled-components'],
 }
-console.log(prod);
+
 let plugins = [
   resolve(),
   commonjs(),
@@ -21,7 +21,6 @@ let plugins = [
 
 if (prod) plugins.push(uglify());
 
-// generate minified and gzipped browser bundle
 if (process.env.BROWSER) {
   config = Object.assign(config, {
     dest: 'dist/styled-media-query.umd.js',
@@ -33,7 +32,6 @@ if (process.env.BROWSER) {
   })
 
 } else if (process.env.COMMON) {
-  // generate CJS non-minified and non-gzipped bundles
   config = Object.assign(config, {
     plugins: [
       resolve(),
@@ -45,7 +43,6 @@ if (process.env.BROWSER) {
   })
 
 } else if (process.env.ES) {
-  // generate ES6 non-minified and non-gzipped bundles
   config = Object.assign(config, {
     plugins: [
       resolve(),
