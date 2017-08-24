@@ -1,21 +1,60 @@
-import { rollup } from 'rollup';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
+import uglify from 'rollup-plugin-uglify';
+import gzip from 'rollup-plugin-gzip';
 
-export default {
+const prod = process.env.PRODUCTION;
+
+let config = {
   entry: 'src/index.js',
-  dest: 'dist/styled-media-query.umd.js',
-  format: 'umd',
-  moduleName: 'styled-media-query',
   sourceMap: true,
   exports: 'named',
-  plugins: [
-    resolve({ 
-      jsnext: true,
-      module: true,
-      main: true,
-    }), 
-    babel()
-  ],
   external: ['react', 'styled-components'],
-};
+}
+console.log(prod);
+let plugins = [
+  resolve(),
+  commonjs(),
+  babel(),
+];
+
+if (prod) plugins.push(uglify());
+
+// generate minified and gzipped browser bundle
+if (process.env.BROWSER) {
+  config = Object.assign(config, {
+    dest: 'dist/styled-media-query.umd.js',
+    format: 'umd',
+    moduleName: 'styled-media-query',
+    sourceMap: true,
+    exports: 'named',
+    plugins,
+  })
+
+} else if (process.env.COMMON) {
+  // generate CJS non-minified and non-gzipped bundles
+  config = Object.assign(config, {
+    plugins: [
+      resolve(),
+      commonjs(),
+      babel(),
+    ],
+    dest: 'dist/styled-media-query.common.js',
+    format: 'cjs',
+  })
+
+} else if (process.env.ES) {
+  // generate ES6 non-minified and non-gzipped bundles
+  config = Object.assign(config, {
+    plugins: [
+      resolve(),
+      commonjs(),
+      babel(),
+    ],
+    dest: 'dist/styled-media-query.es.js',
+    format: 'es',
+  })
+}
+
+export default config;
