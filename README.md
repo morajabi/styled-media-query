@@ -17,7 +17,7 @@ Features:
 
 # Start
 - [Installation](#-installation)
-- [Usage](#-usage)
+- [Usage](#-usage) *-- Get Started*
 - [Concepts](#-concepts)
 - [API](#-api)
 - [Tagged Template Literals explained](https://www.styled-components.com/docs/advanced#tagged-template-literals)
