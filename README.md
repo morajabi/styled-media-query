@@ -25,11 +25,11 @@ Features:
 # 🌱 Installation
 You can install it like every other library with awesome **yarn**:
 ```
-yarn add styled-media-query
+yarn add styled-media-query@beta
 ```
 or with **npm** (as npm@5 you don't need `--save`):
 ```
-npm install --save styled-media-query
+npm install --save styled-media-query@beta
 ```
 
 *Note: If you didn't install `styled-components` yet, install it as well `yarn add styled-components`*
