@@ -104,7 +104,7 @@ div {
 *Note: You can use custom size instead of breakpoint names, too.*
 
 ## `lessThan`
-You can use this type of media query to write style for screen sizes *less than* given breakpoint or size.
+You can use this type of media query to add styles for screen sizes *less than* given breakpoint or size.
 
 Example with breakpoint:
 ```
@@ -122,7 +122,7 @@ media.lessThan('768px')`
 *Note: You can use `rem` and `em` too. (Even you can convert breakpoints to use `em` or `rem` with [`pxToRem`](#pxToRem) and [`pxToEm`](#pxToEm) functions)*
 
 ## `greaterThan`
-You can use it to write style for screen sizes *greater than* given breakpoint or size.
+You can use it to add styles for screen sizes *greater than* given breakpoint or size.
 
 Example with breakpoint:
 ```
@@ -139,7 +139,7 @@ media.greaterThan('450px')`
 ```
 
 ## `between`
-We use `between` to write style for screen sizes *between* the two given breakpoints or sizes.
+We use `between` to add styles for screen sizes *between* the two given breakpoints or sizes.
 
 Example with breakpoints:
 ```
@@ -171,7 +171,7 @@ const customMedia = generateMedia({
 const Box = styled.div`
   font-size: 20px;
 
-  ${media.lessThan('tablet')`
+  ${customMedia.lessThan('tablet')`
     /* for screen sizes less than 60em */
     font-size: 15px;
   `}
