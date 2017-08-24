@@ -1,5 +1,5 @@
 # 💅💍 styled-media-query
-[![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()  [![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()  [![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]()  
+[![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()  [![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()  [![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]()
 
 Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
 
@@ -24,11 +24,11 @@ Features:
 # 🌱 Installation
 You can install it like every other library with awesome **yarn**:
 ```
-yarn add styled-media-query 
+yarn add styled-media-query
 ```
 or with **npm** (as npm@5 you don't need `--save`):
 ```
-npm install --save styled-media-query 
+npm install --save styled-media-query
 ```
 
 *Note: If you didn't install `styled-components` yet, install it as well `yarn add styled-components`*
@@ -203,7 +203,7 @@ import media from 'styled-media-query';
 ```
 
 
-### `generateMedia` 
+### `generateMedia`
 Generates custom [`media generator object`](#media-generator-object) with custom breakpoints:
 ```
 generateMedia([breakpoints]);
@@ -215,7 +215,7 @@ generateMedia([breakpoints]);
 ```javascript
 import { generateMedia } from 'styled-media-query';
 
-const media = generateMedia({ 
+const media = generateMedia({
   xs: '250px',
   sm: '450px',
   md: '768px',
@@ -235,14 +235,14 @@ Converts [`breakpoints object`](#breakpoints-object)'s units from `px` to `rem` 
 ```javascript
 import { pxToRem } from 'styled-media-query';
 
-const breakpointsInRem = pxToRem({ 
+const breakpointsInRem = pxToRem({
   small: '250px',
   medium: '768px',
   large: '1200px',
 }, 10);
 
 /* ↓↓ returns ↓↓
-{ 
+{
   small: '25rem',
   medium: '76.8rem',
   large: '120rem',
@@ -262,13 +262,13 @@ Similar to [`pxToRem`](#pxToRem). Converts [`breakpoints object`](#breakpoints-o
 Similar to [`pxToRem`](#pxToRem).
 
 ## 🐿 Contributions
-I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome. 
+I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome.
 
 ## 🍿 TODO
-- [x] Add LICENSE
-- [ ] Write tests with Jest *in progress by @brajabi*
-- [ ] Add `between.[breakpoint].and.[breakpoint]` method
 - [x] Add convertors for `em` and `rem` to `px` and vice-versa.
+- [x] Add `between()` method
+- [x] Add LICENSE
+- [ ] Write tests with Jest
 - [ ] Ability to specify custom media attributes
 - [ ] Add support for [glamorous](https://github.com/paypal/glamorous)
 - [ ] ... *You say?*
