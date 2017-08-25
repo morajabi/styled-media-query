@@ -269,9 +269,9 @@ Similar to [`pxToRem`](#pxToRem).
 
 
 ## ⚙️ Troubleshoot
-If you use UglifyJS and it fails or you need compiled module you can install version 2 beta right now to fix the issue:
+If you use UglifyJS and it fails or you need compiled module you need to update your module to v2 right now to fix the issue:
 ```
-npm install styled-media-query@beta
+npm install styled-media-query@latest
 ```
 
 ## 🐿 Contributions
