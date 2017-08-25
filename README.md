@@ -17,7 +17,7 @@ Features:
 
 # Start
 - [Installation](#-installation)
-- [Usage](#-usage) *-- Get Started*
+- [Usage](#-usage) *- Get Started*
 - [Concepts](#-concepts)
 - [API](#-api)
 - [Tagged Template Literals explained](https://www.styled-components.com/docs/advanced#tagged-template-literals)
@@ -25,14 +25,19 @@ Features:
 # 🌱 Installation
 You can install it like every other library with awesome **yarn**:
 ```
-yarn add styled-media-query@beta
+yarn add styled-media-query
 ```
-or with **npm** (as npm@5 you don't need `--save`):
+or with **npm**
 ```
-npm install --save styled-media-query@beta
+npm install styled-media-query
 ```
 
 *Note: If you didn't install `styled-components` yet, install it as well `yarn add styled-components`*
+
+**If you use UglifyJS and it fails or you need compiled module you can install version 2 beta right now to fix the issue:**
+```
+npm install styled-media-query@beta
+```
 
 # 🍃 Usage
 First let me mention how our default breakpoint look like:
@@ -261,6 +266,13 @@ Similar to [`pxToRem`](#pxToRem). Converts [`breakpoints object`](#breakpoints-o
 
 *Example:*
 Similar to [`pxToRem`](#pxToRem).
+
+
+## ⚙️ Troubleshoot
+If you use UglifyJS and it fails or you need compiled module you can install version 2 beta right now to fix the issue:
+```
+npm install styled-media-query@beta
+```
 
 ## 🐿 Contributions
 I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome.
