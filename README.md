@@ -2,7 +2,6 @@
 [![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()
 [![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()
 [![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]()
-[![PRs Welcome][prs-badge]][prs]
 
 Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
 
