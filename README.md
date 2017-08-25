@@ -5,7 +5,7 @@ Beautiful media queries better than CSS @media for [styled-components](https://g
 
 **Don't forget to STAR 🎊 We are working so hard to add more features/customizations to `styled-media-query`!**
 
-**Note: This documentation is for version 2 which is still in beta.**
+**Note: This documentation is for the latest version (v2). We still support v1 syntax but it'll be removed in v3.**
 
 
 Features:
@@ -34,10 +34,7 @@ npm install styled-media-query
 
 *Note: If you didn't install `styled-components` yet, install it as well `yarn add styled-components`*
 
-**If you use UglifyJS and it fails or you need compiled module you can install version 2 beta right now to fix the issue:**
-```
-npm install styled-media-query@beta
-```
+**If you use UglifyJS and it fails or you need compiled module, update to latest version please!**
 
 # 🍃 Usage
 First let me mention how our default breakpoint look like:
