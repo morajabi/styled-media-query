@@ -30,7 +30,7 @@ function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
 
 /**
  * Media query generator
- * @param {Object} [breakpoints] breakpoints - Map labels to breakpoint sizes
+ * @param {Object} breakpoints - Map labels to breakpoint sizes
  * @return {Object} - Media generators for each breakpoint
  */
 export function generateMedia(breakpoints = defaultBreakpoints) {
