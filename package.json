@@ -1,17 +1,12 @@
 {
   "name": "styled-media-query",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Beautiful media queries for styled-component",
   "main": "dist/styled-media-query.common.js",
   "module": "dist/styled-media-query.es.js",
   "jsnext:main": "dist/styled-media-query.es.js",
   "repository": "git@github.com:morajabi/styled-media-query.git",
-  "keywords": [
-    "styled-components",
-    "media-query",
-    "media",
-    "breakpoint"
-  ],
+  "keywords": ["styled-components", "media-query", "media", "breakpoint"],
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn build:common && yarn build:es && yarn build:browser",
@@ -19,10 +14,7 @@
     "build:es": "rollup -c --environment ES",
     "build:browser": "rollup -c --environment BROWSER,PRODUCTION"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
