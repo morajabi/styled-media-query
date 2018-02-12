@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()
 [![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()
-[![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]() ![with-coffee](https://img.shields.io/badge/made%20with-%F0%9F%92%A7%20water-blue.svg) ![with-love](https://img.shields.io/badge/made%20with-%F0%9F%92%8C-red.svg)
+[![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]() [![with-coffee](https://img.shields.io/badge/made%20with-%F0%9F%92%A7%20water-blue.svg)](https://github.com/morajabi/with-coffee) [![with-love](https://img.shields.io/badge/made%20with-%F0%9F%92%8C-red.svg)](https://github.com/morajabi/with-coffee)
 
 Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
 
