@@ -6,8 +6,8 @@ import uglify from 'rollup-plugin-uglify';
 const prod = process.env.PRODUCTION;
 
 let config = {
-  entry: 'src/index.js',
-  sourceMap: true,
+  input: 'src/index.js',
+  sourcemap: true,
   exports: 'named',
   external: ['react', 'styled-components'],
 }
