@@ -58,3 +58,7 @@ typings/
 .env
 
 dist
+
+# IntelliJ Idea Project files
+.idea
+styled-media-query.iml
