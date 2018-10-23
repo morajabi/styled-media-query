@@ -42,5 +42,6 @@
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-uglify": "^6.0.0",
     "styled-components": "^4.0.2"
-  }
+  },
+  "browserslist": "> 0.25%, not dead"
 }
