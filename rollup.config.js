@@ -1,14 +1,16 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 
 const prod = process.env.PRODUCTION;
 
 let config = {
   input: 'src/index.js',
-  sourcemap: true,
-  exports: 'named',
+  output: {
+    sourcemap: true,
+    exports: 'named'
+  },
   external: ['react', 'styled-components'],
 }
 
