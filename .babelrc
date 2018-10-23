@@ -1,11 +1,7 @@
 {
   "presets": [
     [
-      "env",
-      {
-        "loose": true,
-        "modules": false
-      }
+      "./.babelrc.js"
     ]
   ]
 }
