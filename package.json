@@ -13,6 +13,7 @@
     "breakpoint"
   ],
   "scripts": {
+    "test": "jest",
     "clean": "rimraf dist",
     "build": "yarn build:common && yarn build:es && yarn build:browser",
     "build:common": "rollup -c --environment COMMON,PRODUCTION",
