@@ -6,7 +6,12 @@
   "module": "dist/styled-media-query.es.js",
   "jsnext:main": "dist/styled-media-query.es.js",
   "repository": "git@github.com:morajabi/styled-media-query.git",
-  "keywords": ["styled-components", "media-query", "media", "breakpoint"],
+  "keywords": [
+    "styled-components",
+    "media-query",
+    "media",
+    "breakpoint"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn build:common && yarn build:es && yarn build:browser",
@@ -14,7 +19,10 @@
     "build:es": "rollup -c --environment ES",
     "build:browser": "rollup -c --environment BROWSER,PRODUCTION"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
@@ -22,6 +30,7 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
+    "jest": "^23.6.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
