@@ -18,6 +18,8 @@ examples
 # code coverage directories
 coverage
 .nyc_output
+!nyc/node_modules/istanbul-reports/lib/html/assets
+!istanbul-reports/lib/html/assets
 
 # build scripts
 Makefile
