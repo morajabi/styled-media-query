@@ -3,14 +3,20 @@
 // Definitions by: François Best <https://github.com/franky47>
 // TypeScript version: 3.1.6
 
-import { ThemedStyledProps, FlattenInterpolation } from 'styled-components'
+import {
+  ThemedStyledProps,
+  InterpolationValue,
+  FlattenInterpolation
+} from 'styled-components'
+
+type InterpolationFunction<Props, Theme> = (
+  props: ThemedStyledProps<Props, Theme>
+) => InterpolationValue | FlattenInterpolation<ThemedStyledProps<Props, Theme>>
 
 type GeneratorFunction<Props, Theme> = (
   strings: TemplateStringsArray,
   ...interpolations: (
-    | ((
-        props: ThemedStyledProps<Props, Theme>
-      ) => string | FlattenInterpolation<ThemedStyledProps<Props, Theme>>)
+    | InterpolationFunction<Props, Theme>
     | FlattenInterpolation<ThemedStyledProps<Props, Theme>>)[]
 ) => any
 
