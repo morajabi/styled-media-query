@@ -51,3 +51,8 @@ export function generateMedia<Breakpoints = DefaultBreakpoints, Theme = any>(
 declare const media: MediaGenerator<DefaultBreakpoints, any>
 
 export default media
+
+// Convertors --
+
+export function pxToEm<B>(breakpoints: B, ratio?: number): B
+export function pxToRem<B>(breakpoints: B, ratio?: number): B
