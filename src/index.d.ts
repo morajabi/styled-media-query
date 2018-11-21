@@ -1,19 +1,32 @@
 // Type definitions for styled-media-query 2.0.2
+// Project: https://github.com/morajabi/styled-media-query
+// Definitions by: François Best <https://github.com/franky47>
+// TypeScript version: 3.1.6
 
-type GeneratorFunction<Theme> = <P>(
+import { ThemedStyledProps, FlattenInterpolation } from 'styled-components'
+
+type GeneratorFunction<Props, Theme> = (
   strings: TemplateStringsArray,
-  ...interpolations: (any)[]
+  ...interpolations: (
+    | ((
+        props: ThemedStyledProps<Props, Theme>
+      ) => string | FlattenInterpolation<ThemedStyledProps<Props, Theme>>)
+    | FlattenInterpolation<ThemedStyledProps<Props, Theme>>)[]
 ) => any
 
 // --
 
 export interface MediaGenerator<Breakpoints, Theme> {
-  lessThan: (breakpoint: keyof Breakpoints) => GeneratorFunction<Theme>
-  greaterThan: (breakpoint: keyof Breakpoints) => GeneratorFunction<Theme>
-  between: (
+  lessThan: <Props>(
+    breakpoint: keyof Breakpoints
+  ) => GeneratorFunction<Props, Theme>
+  greaterThan: <Props>(
+    breakpoint: keyof Breakpoints
+  ) => GeneratorFunction<Props, Theme>
+  between: <Props>(
     fist: keyof Breakpoints,
     second: keyof Breakpoints
-  ) => GeneratorFunction<Theme>
+  ) => GeneratorFunction<Props, Theme>
 }
 
 // --
