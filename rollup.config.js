@@ -1,17 +1,18 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
-import uglify from 'rollup-plugin-uglify';
-import gzip from 'rollup-plugin-gzip';
+import { uglify } from 'rollup-plugin-uglify';
 
 const prod = process.env.PRODUCTION;
 
 let config = {
-  entry: 'src/index.js',
-  sourceMap: true,
-  exports: 'named',
+  input: 'src/index.js',
+  output: {
+    sourcemap: true,
+    exports: 'named'
+  },
   external: ['react', 'styled-components'],
-}
+};
 
 let plugins = [
   resolve(),
@@ -19,15 +20,24 @@ let plugins = [
   babel(),
 ];
 
+const globals = {
+  'styled-components': 'styledComponents',
+  react: 'React',
+  'react-dom': 'ReactDOM',
+};
+
 if (prod) plugins.push(uglify());
 
 if (process.env.BROWSER) {
   config = Object.assign(config, {
-    dest: 'dist/styled-media-query.umd.js',
-    format: 'umd',
-    moduleName: 'styled-media-query',
-    sourceMap: true,
-    exports: 'named',
+    output: {
+      file: 'dist/styled-media-query.umd.js',
+      format: 'umd',
+      name: 'styled-media-query',
+      sourcemap: true,
+      exports: 'named',
+      globals,
+    },
     plugins,
   })
 
@@ -38,8 +48,11 @@ if (process.env.BROWSER) {
       commonjs(),
       babel(),
     ],
-    dest: 'dist/styled-media-query.common.js',
-    format: 'cjs',
+    output: {
+      file: 'dist/styled-media-query.common.js',
+      format: 'cjs',
+      exports: 'named',
+    }
   })
 
 } else if (process.env.ES) {
@@ -49,8 +62,10 @@ if (process.env.BROWSER) {
       commonjs(),
       babel(),
     ],
-    dest: 'dist/styled-media-query.es.js',
-    format: 'es',
+    output: {
+      file: 'dist/styled-media-query.es.js',
+      format: 'es',
+    },
   })
 }
 

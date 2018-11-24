@@ -6,29 +6,41 @@
   "module": "dist/styled-media-query.es.js",
   "jsnext:main": "dist/styled-media-query.es.js",
   "repository": "git@github.com:morajabi/styled-media-query.git",
-  "keywords": ["styled-components", "media-query", "media", "breakpoint"],
+  "keywords": [
+    "styled-components",
+    "media-query",
+    "media",
+    "breakpoint"
+  ],
   "scripts": {
+    "test": "jest",
     "clean": "rimraf dist",
     "build": "yarn build:common && yarn build:es && yarn build:browser",
     "build:common": "rollup -c --environment COMMON,PRODUCTION",
     "build:es": "rollup -c --environment ES",
     "build:browser": "rollup -c --environment BROWSER,PRODUCTION"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "styled-components": ">= 1 < 4"
+    "styled-components": ">= 4",
+    "react": ">= 16.3.0",
+    "react-dom": ">= 16.3.0"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
-    "rimraf": "^2.6.1",
-    "rollup": "^0.45.2",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.2.0",
-    "rollup-plugin-gzip": "^1.3.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "styled-components": "^3.1.5"
-  }
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-uglify": "^6.0.0",
+    "styled-components": "^4.0.2"
+  },
+  "browserslist": "> 0.25%, not dead"
 }
