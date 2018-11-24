@@ -27,9 +27,7 @@
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "styled-components": ">= 4",
-    "react": ">= 16.3.0",
-    "react-dom": ">= 16.3.0"
+    "styled-components": ">= 1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
