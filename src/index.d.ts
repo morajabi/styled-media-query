@@ -1,7 +1,8 @@
-// Type definitions for styled-media-query 2.0.2
+// Type definitions for styled-media-query 2.1.1
 // Project: https://github.com/morajabi/styled-media-query
 // Definitions by: François Best <https://github.com/franky47>
-// TypeScript version: 3.1.6
+// Requires @types/styled-components definitions ^4.1
+// TypeScript version: 3.3.3
 
 import {
   ThemedStyledProps,
@@ -16,6 +17,7 @@ type InterpolationFunction<Props, Theme> = (
 type GeneratorFunction<Props, Theme> = (
   strings: TemplateStringsArray,
   ...interpolations: (
+    | InterpolationValue
     | InterpolationFunction<Props, Theme>
     | FlattenInterpolation<ThemedStyledProps<Props, Theme>>)[]
 ) => any
