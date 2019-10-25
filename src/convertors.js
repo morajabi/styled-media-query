@@ -1,10 +1,10 @@
 /**
  * Converts breakpoint units in px to rem or em
  * @param {Object} breakpoints - an object containing breakpoint names as keys and the width as value
- * @param {number} ratio [16] - size of 1 rem in px. What is your main font-size in px?
+ * @param {number} ratio - size of 1 rem in px. What is your main font-size in px?
  * @param {'rem' | 'em'} unit
  */
-function pxToEmOrRem(breakpoints, ratio = 16, unit) {
+function pxToEmOrRem(breakpoints, ratio, unit) {
   const newBreakpoints = {};
 
   for (let key in breakpoints) {
@@ -22,7 +22,7 @@ function pxToEmOrRem(breakpoints, ratio = 16, unit) {
 }
 
 /**
- * Converts breakpoint units in px to em 
+ * Converts breakpoint units in px to em
  * @param {Object} breakpoints - an object containing breakpoint names as keys and the width as value
  * @param {number} ratio [16] - size of 1em in px. What is your main font-size in px?
  */
@@ -31,7 +31,7 @@ export function pxToEm(breakpoints, ratio = 16) {
 }
 
 /**
- * Converts breakpoint units in px to rem 
+ * Converts breakpoint units in px to rem
  * @param {Object} breakpoints - an object containing breakpoint names as keys and the width as value
  * @param {number} ratio [16] - size of 1rem in px. What is your main font-size in px?
  */
