@@ -41,5 +41,7 @@
     "rollup-plugin-uglify": "^6.0.0",
     "styled-components": "^4.1.1"
   },
-  "browserslist": "> 0.25%, not dead"
+  "browserslist": [
+    "> 0.25%, not dead"
+  ]
 }
