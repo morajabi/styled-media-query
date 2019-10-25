@@ -25,6 +25,7 @@ type GeneratorFunction<Props, Theme> = (
 // --
 
 export interface MediaGenerator<Breakpoints, Theme> {
+  styled: <Props> () => InterpolationFunction<Props, Theme>
   lessThan: <Props>(
     breakpoint: keyof Breakpoints
   ) => GeneratorFunction<Props, Theme>

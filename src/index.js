@@ -34,6 +34,8 @@ function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
  * @return {Object} - Media generators for each breakpoint
  */
 export function generateMedia(breakpoints = defaultBreakpoints) {
+  const styled = (...args) => css(...args);
+
   const lessThan = (breakpoint) => (...args) => css`
     @media (max-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
       ${css(...args)}
@@ -76,9 +78,11 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
         `;
       };
 
+      acc.styled[label] = (...args) => css(...args);
+
       return acc;
     },
-    { to: {}, from: {} }
+    { to: {}, from: {}, styled: {} }
   );
 
   return Object.assign(
@@ -89,6 +93,45 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
     },
     oldStyle,
   );
+}
+
+// TODO: comments
+export class GenerateMediaChained extends Function {
+  constructor(breakpoints = defaultBreakpoints) {
+    super('...args', 'return this.__self__.__call__(...args)');
+    const self = this.bind(this);
+    this.__self__ =  self;
+    self.callees = []
+    self.media = generateMedia(breakpoints)
+    return self;
+  }
+
+  lessThan (breakpoint) {
+    if (this.callees.length > 1) this.callees = []
+    this.callees.push(this.media.lessThan(breakpoint))
+    return this;
+  }
+
+  greaterThan (breakpoint) {
+    if (this.callees.length > 1) this.callees = []
+    this.callees.push(this.media.greaterThan(breakpoint))
+    return this;
+  }
+
+  between (firstBreakpoint, secondBreakpoint) {
+    if (typeof firstBreakpoint === "string") this.css(firstBreakpoint)
+    if (this.callees.length > 1) this.callees = []
+    this.callees.push(this.media.between(firstBreakpoint, secondBreakpoint))
+    return this;
+  }
+
+  css (...args) {
+    return this.callees[0](...args)
+  }
+
+  __call__ (...args) {
+    return this.css(...args)
+  }
 }
 
 /**
