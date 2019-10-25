@@ -5,6 +5,7 @@
   "main": "dist/styled-media-query.common.js",
   "module": "dist/styled-media-query.es.js",
   "jsnext:main": "dist/styled-media-query.es.js",
+  "types": "./src/index.d.ts",
   "repository": "git@github.com:morajabi/styled-media-query.git",
   "keywords": [
     "styled-components",
