@@ -100,6 +100,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
 export class GenerateMediaChained extends Function {
   /**
    * Constructor to chain `generateMedia()` and still bind the class to itself.
+   *
    * @param breakpoints   Object    The initial breakpoint object.
    * @return {any}
    */
