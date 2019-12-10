@@ -26,14 +26,14 @@ type GeneratorFunction<Props, Theme> = (
 
 export interface MediaGenerator<Breakpoints, Theme> {
   lessThan: <Props>(
-    breakpoint: keyof Breakpoints
+    breakpoint: keyof Breakpoints | string
   ) => GeneratorFunction<Props, Theme>
   greaterThan: <Props>(
-    breakpoint: keyof Breakpoints
+    breakpoint: keyof Breakpoints | string
   ) => GeneratorFunction<Props, Theme>
   between: <Props>(
-    fist: keyof Breakpoints,
-    second: keyof Breakpoints
+    fist: keyof Breakpoints | string,
+    second: keyof Breakpoints | string
   ) => GeneratorFunction<Props, Theme>
 }
 
