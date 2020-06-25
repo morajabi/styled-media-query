@@ -7,60 +7,64 @@
 import {
   ThemedStyledProps,
   InterpolationValue,
-  FlattenInterpolation
-} from 'styled-components'
+  FlattenInterpolation,
+} from "styled-components";
 
 type InterpolationFunction<Props, Theme> = (
   props: ThemedStyledProps<Props, Theme>
-) => InterpolationValue | FlattenInterpolation<ThemedStyledProps<Props, Theme>>
+) => InterpolationValue | FlattenInterpolation<ThemedStyledProps<Props, Theme>>;
 
 type GeneratorFunction<Props, Theme> = (
   strings: TemplateStringsArray,
   ...interpolations: (
     | InterpolationValue
     | InterpolationFunction<Props, Theme>
-    | FlattenInterpolation<ThemedStyledProps<Props, Theme>>)[]
-) => any
+    | FlattenInterpolation<ThemedStyledProps<Props, Theme>>
+  )[]
+) => any;
 
 // --
 
 export interface MediaGenerator<Breakpoints, Theme> {
-  lessThan: <Props>(
+  lessThan<Props>(
     breakpoint: keyof Breakpoints
-  ) => GeneratorFunction<Props, Theme>
-  greaterThan: <Props>(
+  ): GeneratorFunction<Props, Theme>;
+  lessThan<Props>(breakpoint: string): GeneratorFunction<Props, Theme>;
+  greaterThan<Props>(
     breakpoint: keyof Breakpoints
-  ) => GeneratorFunction<Props, Theme>
-  between: <Props>(
+  ): GeneratorFunction<Props, Theme>;
+  greaterThan<Props>(breakpoint: string): GeneratorFunction<Props, Theme>;
+  between<Props>(
     fist: keyof Breakpoints,
     second: keyof Breakpoints
-  ) => GeneratorFunction<Props, Theme>
+  ): GeneratorFunction<Props, Theme>;
+  between<Props>(fist: string, second: string): GeneratorFunction<Props, Theme>;
 }
 
 // --
 
 export interface DefaultBreakpoints {
-  huge: string
-  large: string
-  medium: string
-  small: string
+  huge: string;
+  large: string;
+  medium: string;
+  small: string;
 }
 
-export const defaultBreakpoints: DefaultBreakpoints
+export const defaultBreakpoints: DefaultBreakpoints;
 
 // --
 
 export function generateMedia<Breakpoints = DefaultBreakpoints, Theme = any>(
   breakpoints?: Breakpoints
-): MediaGenerator<Breakpoints, Theme>
+): MediaGenerator<Breakpoints, Theme>;
 
 // --
 
-declare const media: MediaGenerator<DefaultBreakpoints, any>
+declare const media: MediaGenerator<DefaultBreakpoints, any>;
 
-export default media
+export default media;
 
 // Convertors --
 
-export function pxToEm<B>(breakpoints: B, ratio?: number): B
-export function pxToRem<B>(breakpoints: B, ratio?: number): B
+export function pxToEm<B>(breakpoints: B, ratio?: number): B;
+export function pxToRem<B>(breakpoints: B, ratio?: number): B;
