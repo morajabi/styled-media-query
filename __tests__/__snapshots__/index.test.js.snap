@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generatedDefaultMedia() expect <Box /> to have matching media style rules 1`] = `
+.c0 {
+  background: black;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    background: red;
+  }
+}
+
+@media (min-width:768px) and (max-width:1170px) {
+  .c0 {
+    background: green;
+  }
+}
+
+@media (min-width:1170px) {
+  .c0 {
+    background: blue;
+  }
+}
+
+@media (max-width:1170px) {
+  .c0 {
+    background: white;
+  }
+}
+
+@media (min-width:450px) {
+  .c0 {
+    background: yellow;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

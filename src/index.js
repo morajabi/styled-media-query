@@ -17,7 +17,14 @@ export const defaultBreakpoints = {
   small: '450px',
 };
 
-function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
+/**
+ * Maps size to breakpoints array
+ *
+ * @param {*} breakpointValue - The value to map
+ * @param {Object} breakpoints - Map labels to breakpoint sizes
+ * @return {string|*}
+ */
+function getSizeFromBreakpoint(breakpointValue, breakpoints) {
   if (breakpoints[breakpointValue]) {
     return breakpoints[breakpointValue];
   } else if (parseInt(breakpointValue)) {
