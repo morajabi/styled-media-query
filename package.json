@@ -31,15 +31,18 @@
     "styled-components": ">= 1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.67.3",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-uglify": "^6.0.0",
-    "styled-components": "^4.1.1"
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.40.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "styled-components": "^5.2.1"
   },
   "browserslist": "> 0.25%, not dead"
 }

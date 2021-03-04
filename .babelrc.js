@@ -1,10 +1,3 @@
-const presets = [
-  [
-    "@babel/env",
-    {
-      "useBuiltIns": "entry"
-    },
-  ],
-];
+const presets = [['@babel/env']];
 
 module.exports = { presets };
