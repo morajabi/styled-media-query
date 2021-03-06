@@ -76,9 +76,11 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
         `;
       };
 
+      acc.styled[label] = (...args) => css(...args);
+
       return acc;
     },
-    { to: {}, from: {} }
+    { to: {}, from: {}, styled: {} }
   );
 
   return Object.assign(
@@ -89,6 +91,94 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
     },
     oldStyle,
   );
+}
+
+/**
+ * Generate Media as a chained callable class by extending Function.
+ * (Proposal for V3)
+ */
+export class GenerateMediaChained extends Function {
+  /**
+   * Constructor to chain `generateMedia()` and still bind the class to itself.
+   *
+   * @param breakpoints   Object    The initial breakpoint object.
+   * @return {any}
+   */
+  constructor(breakpoints = defaultBreakpoints) {
+    // Call parent constuctor, making this a function.
+    super('...args', 'return this.__self__.__call__(...args)');
+    // Reestablish context by binding to this.
+    const self = this.bind(this);
+    this.__self__ =  self;
+    // As we have to return an instance of `self` with bound this, create the
+    // class variables on it. `callees` will later be a bound creator.
+    self.callees = []
+    self.media = generateMedia(breakpoints)
+    return self;
+  }
+
+  /**
+   * Wrapper around `lessThan()`.
+   * At the moment we have to reset the length of `callees` as long as chaining
+   * isn't discussed further.
+   *
+   * @param breakpoint    String|Number   Breakpoint to create Media-query from.
+   * @return {GenerateMediaChained}
+   */
+  lessThan (breakpoint) {
+    if (this.callees.length > 1) this.callees = []
+    this.callees.push(this.media.lessThan(breakpoint))
+    return this;
+  }
+
+  /**
+   * Wrapper around `greaterThan()`
+   *
+   * @param breakpoint    String|Number   Breakpoint to create Media-query from.
+   * @return {GenerateMediaChained}
+   */
+  greaterThan (breakpoint) {
+    if (this.callees.length > 1) this.callees = []
+    this.callees.push(this.media.greaterThan(breakpoint))
+    return this;
+  }
+
+  /**
+   * Wrapper around `between()`.
+   *
+   * @param firstBreakpoint   String|Number  Lower bound breakpoint.
+   * @param secondBreakpoint  String|Number  Upper bound breakpoint.
+   * @return {GenerateMediaChained}
+   */
+  between (firstBreakpoint, secondBreakpoint) {
+    if (typeof firstBreakpoint === "string") this.css(firstBreakpoint)
+    if (this.callees.length > 1) this.callees = []
+    this.callees.push(this.media.between(firstBreakpoint, secondBreakpoint))
+    return this;
+  }
+
+  /**
+   * Finalizing function (like jQuerys' `end()`).
+   * Tried to replicate the highlighting for styled-components with this, but
+   * sadly doesn't work.
+   *
+   * @param args    String    The css to give to the functions in `callees`.
+   * @return {*}
+   */
+  css (...args) {
+    return this.callees[0](...args)
+  }
+
+  /**
+   * Same as `css()`. But now our class is a callable.
+   *
+   * @param args    String    The css to give to the functions in `callees`.
+   * @return {*}
+   * @private
+   */
+  __call__ (...args) {
+    return this.css(...args)
+  }
 }
 
 /**
