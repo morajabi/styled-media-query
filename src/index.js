@@ -18,7 +18,9 @@ export const defaultBreakpoints = {
 };
 
 function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
-  if (breakpoints[breakpointValue]) {
+  if (typeof breakpoints[breakpointValue] === "number") {
+    return breakpoints[breakpointValue] + "px";
+  } else if (breakpoints[breakpointValue]) {
     return breakpoints[breakpointValue];
   } else if (parseInt(breakpointValue)) {
     return breakpointValue;

@@ -44,10 +44,10 @@ export interface MediaGenerator<Breakpoints, Theme> {
 // --
 
 export interface DefaultBreakpoints {
-  huge: string;
-  large: string;
-  medium: string;
-  small: string;
+  huge: string | number;
+  large: string | number;
+  medium: string | number;
+  small: string | number;
 }
 
 export const defaultBreakpoints: DefaultBreakpoints;
