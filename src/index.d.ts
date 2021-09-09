@@ -44,10 +44,10 @@ export interface MediaGenerator<Breakpoints, Theme> {
 // --
 
 export interface DefaultBreakpoints {
-  huge: string;
-  large: string;
-  medium: string;
-  small: string;
+  huge: string | number;
+  large: string | number;
+  medium: string | number;
+  small: string | number;
 }
 
 export const defaultBreakpoints: DefaultBreakpoints;
@@ -66,5 +66,11 @@ export default media;
 
 // Convertors --
 
-export function pxToEm<B>(breakpoints: B, ratio?: number): B;
-export function pxToRem<B>(breakpoints: B, ratio?: number): B;
+export function pxToEm<B extends DefaultBreakpoints>(
+  breakpoints: B,
+  ratio?: number
+): B;
+export function pxToRem<B extends DefaultBreakpoints>(
+  breakpoints: B,
+  ratio?: number
+): B;
