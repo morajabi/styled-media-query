@@ -10,7 +10,7 @@ function pxToEmOrRem(breakpoints, ratio = 16, unit) {
   for (let key in breakpoints) {
     const point = breakpoints[key];
 
-    if (String(point).includes('px')) {
+    if (typeof point === 'number' || String(point).includes('px')) {
       newBreakpoints[key] = +(parseInt(point) / ratio) + unit;
       continue;
     }

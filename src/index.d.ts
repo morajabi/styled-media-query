@@ -66,5 +66,11 @@ export default media;
 
 // Convertors --
 
-export function pxToEm<B>(breakpoints: B, ratio?: number): B;
-export function pxToRem<B>(breakpoints: B, ratio?: number): B;
+export function pxToEm<B extends DefaultBreakpoints>(
+  breakpoints: B,
+  ratio?: number
+): B;
+export function pxToRem<B extends DefaultBreakpoints>(
+  breakpoints: B,
+  ratio?: number
+): B;
