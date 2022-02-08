@@ -35,7 +35,7 @@ export interface MediaGenerator<Breakpoints, Theme> {
   ): GeneratorFunction<Props, Theme>;
   greaterThan<Props>(breakpoint: string): GeneratorFunction<Props, Theme>;
   between<Props>(
-    fist: keyof Breakpoints,
+    first: keyof Breakpoints,
     second: keyof Breakpoints
   ): GeneratorFunction<Props, Theme>;
   between<Props>(fist: string, second: string): GeneratorFunction<Props, Theme>;
